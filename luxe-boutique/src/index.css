@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9B8B3;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #632B3A;
+}
+
+/* Shimmer placeholder animation for smooth image loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.img-shimmer {
+  background: linear-gradient(90deg, #F3EFE9 25%, #E9DFD3 50%, #F3EFE9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Editorial line decorative */
+.editorial-line {
+  position: relative;
+}
+.editorial-line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 32px;
+  height: 1px;
+  background-color: #632B3A;
+}
